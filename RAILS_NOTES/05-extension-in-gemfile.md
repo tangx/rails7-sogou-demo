@@ -66,3 +66,49 @@ Success
 
 ![](./images/05-bootstrap-demo.jpg)
 
+
+## 5.3. 编辑导航页面
+
+删除 `app/views/welcome/home.html.erb` 中的所有内容， 复制粘贴 navbar 的内容。 
+
+```ruby
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">网页</a>
+        </li>
+
+    <% ['微信', '知乎', '图片', '视频', '医疗', '汉语', '翻译'].each do |name| %>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><%= name %></a>
+        </li>
+    <% end %>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+```
+
+这里使用了 **数组** 的 `each` 循环。
+
+```ruby
+    <% ['微信', '知乎', '图片', '视频', '医疗', '汉语', '翻译'].each do |name| %>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><%= name %></a>
+        </li>
+    <% end %>
+```
+
+很明显
+
+1. erb 文件中，使用了 `<% %> ... <% end %>` 作为模版
+2. 在模版中， 引用变量 `<%= ... %>` 注意左边的 `=`
+
