@@ -35,10 +35,43 @@
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
+
     </div>
   </div>
 </nav>
+
+<div class="home-container">
+
+    <%
+=begin%>
+ # 直接使用 img 标签
+ <img src="https://dlweb.sogoucdn.com/pcsearch/web/index/images/logo_440x140_31de1d2.png?v=d6bfe569"> 
+<%
+=end%>
+
+
+<%
+=begin%>
+  # 这里使用 ruby 的 image_tag 语法。
+  # 将文件放在 app/assets/images 目录下，就可以使用 image_tag 语法了。
+  # 语法： <%= image_tag "文件名" %>
+  # 属性之间使用 逗号 , 分隔
+<%
+=end%>
+
+    <%= image_tag "sogou.png", width: 330, height: 80 %>
+
+
+    <div class="input-group mb-3 mt-3">
+        <input
+            name="keyword"
+            type="text"
+            class="form-control"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+        >
+        <button type="submit" class="btn btn-primary">搜狗搜索</button>
+
+    </div>
+</div>

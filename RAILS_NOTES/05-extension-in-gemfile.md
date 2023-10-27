@@ -112,3 +112,19 @@ Success
 1. erb 文件中，使用了 `<% %> ... <% end %>` 作为模版
 2. 在模版中， 引用变量 `<%= ... %>` 注意左边的 `=`
 
+
+### 5.3.2 使用 image_tag 语法
+
+这里使用 ruby 的 image_tag 语法创建 html 的 img 标签。
+
+将文件放在 app/assets/images 目录下，就可以使用 image_tag 语法了。
+语法： `<%= image_tag "文件名" %>`。  属性之间使用 `逗号 ,` 分隔
+
+```ruby
+    <%= image_tag "sogou.png", width: 330, height: 80 %>
+```
+效果与 html image 标签一致
+
+```html
+<img src="https://dlweb.sogoucdn.com/pcsearch/web/index/images/logo_440x140_31de1d2.png?v=d6bfe569"> 
+```
